@@ -1,0 +1,217 @@
+LOG(2015-08-23T14:27:29.399555, 12748, 0026F690:): -------->>
+LOG(2015-08-23T14:27:29.399555, 12748, 0026F690:): Core session started on 2015-08-23T14:27:29.399555 by zoom on PHY-TG2
+LOG(2015-08-23T14:27:29.399555, 12748, 0026F690:): Debug logging disabled
+LOG(2015-08-23T14:27:29.399555, 12748, 0026F690:): Debug logging disabled
+LOG(2015-08-23T14:27:29.399555, 12748, 0026F690:): > MM Studio version: 1.4.14  20130118
+LOG(2015-08-23T14:27:29.400555, 12748, 0026F690:): > MMCore version 2.3.2
+LOG(2015-08-23T14:27:29.400555, 12748, 0026F690:): > Device API version 53, Module API version 7
+LOG(2015-08-23T14:27:29.400555, 12748, 0026F690:): > Operating System: Windows 7 6.1
+LOG(2015-08-23T14:27:29.400555, 12748, 0026F690:): > JVM: Java HotSpot(TM) Client VM, version 1.6.0_17; 32 bit
+LOG(2015-08-23T14:27:33.156770, 12748, 0026F690:): All devices unloaded.
+LOG(2015-08-23T14:27:33.156770, 12748, 0026F690:): > Notification for Device: Core Property: Initialize changed to value: 0
+LOG(2015-08-23T14:27:33.183772, 12748, 0026F690:): Device COM1 loaded from SerialManager and labeled as COM1
+LOG(2015-08-23T14:27:33.184772, 12748, 0026F690:): Device COM2 loaded from SerialManager and labeled as COM2
+LOG(2015-08-23T14:27:33.185772, 12748, 0026F690:): Device COM3 loaded from SerialManager and labeled as COM3
+LOG(2015-08-23T14:27:33.185772, 12748, 0026F690:): Device COM4 loaded from SerialManager and labeled as COM4
+LOG(2015-08-23T14:27:33.227774, 12748, 0026F690:): Device Wheel-2 loaded from Prior and labeled as WheelEM
+LOG(2015-08-23T14:27:33.228774, 12748, 0026F690:): Device Wheel-1 loaded from Prior and labeled as WheelEX
+LOG(2015-08-23T14:27:33.279777, 12748, 0026F690:): Device Vincent-D3 loaded from Vincent and labeled as ShutterFL
+LOG(2015-08-23T14:27:33.279777, 12748, 0026F690:): Device ShutterFL set as default shutter.
+LOG(2015-08-23T14:27:33.280777, 12748, 0026F690:): Device Vincent-D3 loaded from Vincent and labeled as ShutterTR
+LOG(2015-08-23T14:27:33.280777, 12748, 0026F690:): Device ShutterTR set as default shutter.
+LOG(2015-08-23T14:27:33.331780, 12748, 0026F690:): Device XYStage loaded from ASIStage and labeled as XYStage
+LOG(2015-08-23T14:27:33.331780, 12748, 0026F690:): Device XYStage set as default xyStage.
+LOG(2015-08-23T14:27:33.387783, 12748, 0026F690:): Device Camera-1 loaded from PVCAM and labeled as Cascade
+LOG(2015-08-23T14:27:33.388783, 12748, 0026F690:): Device Cascade set as default camera.
+LOG(2015-08-23T14:27:33.388783, 12748, 0026F690:): Device Vincent-D3 loaded from Vincent and labeled as ShutterUV
+LOG(2015-08-23T14:27:33.388783, 12748, 0026F690:): Device ShutterUV set as default shutter.
+LOG(2015-08-23T14:27:33.389783, 12748, 0026F690:): Device ZStage loaded from ASIStage and labeled as ZStage
+LOG(2015-08-23T14:27:33.389783, 12748, 0026F690:): Device TTL-1 loaded from Prior and labeled as TTL-1
+LOG(2015-08-23T14:27:33.389783, 12748, 0026F690:): Device TTL-1 set as default shutter.
+LOG(2015-08-23T14:27:33.390783, 12748, 0026F690:): Starting initialization sequence for 13 devices...
+LOG(2015-08-23T14:27:33.393784, 12748, 0026F690:): Device COM1 initialized.
+LOG(2015-08-23T14:27:33.394784, 12748, 0026F690:): Device COM2 initialized.
+LOG(2015-08-23T14:27:33.395784, 12748, 0026F690:): Device COM3 initialized.
+LOG(2015-08-23T14:27:33.396784, 12748, 0026F690:): Device COM4 initialized.
+LOG(2015-08-23T14:27:35.512905, 12748, 0026F690:): Device WheelEM initialized.
+LOG(2015-08-23T14:27:37.841038, 12748, 0026F690:): Device WheelEX initialized.
+LOG(2015-08-23T14:27:37.841038, 12748, 0026F690:): Device ShutterFL initialized.
+LOG(2015-08-23T14:27:37.841038, 12748, 0026F690:): Device ShutterTR initialized.
+LOG(2015-08-23T14:27:38.153056, 12748, 0026F690:): Device XYStage initialized.
+LOG(2015-08-23T14:27:38.156056, 12748, 0026F690:): Device Cascade message: PVCAM VERSION: 2.9.5. Number of cameras detected: 1
+LOG(2015-08-23T14:27:38.898098, 12748, 0026F690:): Device Cascade message: Building Speed Table
+LOG(2015-08-23T14:27:39.164114, 12748, 0026F690:): Device Cascade message: Initializing Static Camera Properties
+LOG(2015-08-23T14:27:39.193115, 12748, 0026F690:): Device Cascade message: Initializing Dynamic Camera Properties
+LOG(2015-08-23T14:27:39.564136, 12748, 0026F690:): Device Cascade message: This Camera has Em Gain
+LOG(2015-08-23T14:27:39.564136, 12748, 0026F690:): Device Cascade message: Frame Transfer mode is available
+LOG(2015-08-23T14:27:39.644141, 12748, 0026F690:): Device Cascade initialized.
+LOG(2015-08-23T14:27:39.644141, 12748, 0026F690:): Device ShutterUV initialized.
+LOG(2015-08-23T14:27:39.700144, 12748, 0026F690:): Device ZStage message: XYPZT
+LOG(2015-08-23T14:27:39.725146, 12748, 0026F690:): Device ZStage initialized.
+LOG(2015-08-23T14:27:39.746147, 12748, 0026F690:): Device TTL-1 initialized.
+LOG(2015-08-23T14:27:39.746147, 12748, 0026F690:): > Notification for Device: Core Property: Initialize changed to value: 1
+LOG(2015-08-23T14:27:39.746147, 12748, 0026F690:): Camera device set to Cascade
+LOG(2015-08-23T14:27:39.746147, 12748, 0026F690:): > Notification for Device: Core Property: Camera changed to value: Cascade
+LOG(2015-08-23T14:27:39.767148, 12748, 0026F690:): Shutter device set to ShutterTR
+LOG(2015-08-23T14:27:39.767148, 12748, 0026F690:): > Notification for Device: Core Property: Shutter changed to value: ShutterTR
+LOG(2015-08-23T14:27:39.767148, 12748, 0026F690:): Focus device set to ZStage
+LOG(2015-08-23T14:27:39.767148, 12748, 0026F690:): > Notification for Device: Core Property: Focus changed to value: ZStage
+LOG(2015-08-23T14:27:39.767148, 12748, 0026F690:): Auto shutter ON.
+LOG(2015-08-23T14:27:39.767148, 12748, 0026F690:): > Notification for Device: Core Property: AutoShutter changed to value: 1
+LOG(2015-08-23T14:27:39.768148, 12748, 0026F690:): Configuration WheelEM/Open: new setting for device WheelEM defined as Label=Open
+LOG(2015-08-23T14:27:39.768148, 12748, 0026F690:): Configuration WheelEM/HQ630-60 M new RFP: new setting for device WheelEM defined as Label=HQ630/60 M new RFP
+LOG(2015-08-23T14:27:39.768148, 12748, 0026F690:): Configuration WheelEM/D540-20m YFP FRET: new setting for device WheelEM defined as Label=D540/20m YFP FRET
+LOG(2015-08-23T14:27:39.768148, 12748, 0026F690:): Configuration WheelEM/Blocked: new setting for device WheelEM defined as Label=Blocked
+LOG(2015-08-23T14:27:39.768148, 12748, 0026F690:): Configuration WheelEM/ET 470-24m CFP FRET: new setting for device WheelEM defined as Label=ET 470/24m CFP FRET
+LOG(2015-08-23T14:27:39.768148, 12748, 0026F690:): Configuration WheelEM/D535-40m GFP: new setting for device WheelEM defined as Label=D535/40m GFP
+LOG(2015-08-23T14:27:39.768148, 12748, 0026F690:): Configuration WheelEM/D630-60m RFP: new setting for device WheelEM defined as Label=D630/60m RFP
+LOG(2015-08-23T14:27:39.768148, 12748, 0026F690:): Configuration Shutters/ShutterTR: new setting for device ShutterFL defined as Command=Close
+LOG(2015-08-23T14:27:39.768148, 12748, 0026F690:): Configuration Shutters/ShutterTR: new setting for device ShutterTR defined as Command=Open
+LOG(2015-08-23T14:27:39.768148, 12748, 0026F690:): Configuration Shutters/ShutterTR: new setting for device ShutterUV defined as Command=Close
+LOG(2015-08-23T14:27:39.768148, 12748, 0026F690:): Configuration Shutters/ShutterFL: new setting for device ShutterFL defined as Command=Open
+LOG(2015-08-23T14:27:39.768148, 12748, 0026F690:): Configuration Shutters/ShutterFL: new setting for device ShutterTR defined as Command=Close
+LOG(2015-08-23T14:27:39.768148, 12748, 0026F690:): Configuration Shutters/ShutterFL: new setting for device ShutterUV defined as Command=Close
+LOG(2015-08-23T14:27:39.768148, 12748, 0026F690:): Configuration Shutters/ShutterUV: new setting for device ShutterFL defined as Command=Close
+LOG(2015-08-23T14:27:39.768148, 12748, 0026F690:): Configuration Shutters/ShutterUV: new setting for device ShutterTR defined as Command=Close
+LOG(2015-08-23T14:27:39.769148, 12748, 0026F690:): Configuration Shutters/ShutterUV: new setting for device ShutterUV defined as Command=Open
+LOG(2015-08-23T14:27:39.769148, 12748, 0026F690:): Configuration Shutters/All OFF: new setting for device ShutterFL defined as Command=Close
+LOG(2015-08-23T14:27:39.769148, 12748, 0026F690:): Configuration Shutters/All OFF: new setting for device ShutterTR defined as Command=Close
+LOG(2015-08-23T14:27:39.769148, 12748, 0026F690:): Configuration Shutters/All OFF: new setting for device ShutterUV defined as Command=Close
+LOG(2015-08-23T14:27:39.769148, 12748, 0026F690:): Configuration Gain/3: new setting for device Cascade defined as Gain=3
+LOG(2015-08-23T14:27:39.769148, 12748, 0026F690:): Configuration Gain/2: new setting for device Cascade defined as Gain=2
+LOG(2015-08-23T14:27:39.769148, 12748, 0026F690:): Configuration Gain/1: new setting for device Cascade defined as Gain=1
+LOG(2015-08-23T14:27:39.769148, 12748, 0026F690:): Configuration Channel/LaserUncage: new setting for device WheelEM defined as Label=Open
+LOG(2015-08-23T14:27:39.769148, 12748, 0026F690:): Configuration Channel/LaserUncage: new setting for device WheelEX defined as Label=FB 420/10 CFP
+LOG(2015-08-23T14:27:39.769148, 12748, 0026F690:): Configuration Channel/LaserUncage: new setting for device Core defined as Shutter=ShutterUV
+LOG(2015-08-23T14:27:39.769148, 12748, 0026F690:): Configuration Channel/CFP2-CFP: new setting for device WheelEM defined as Label=ET 470/24m CFP FRET
+LOG(2015-08-23T14:27:39.769148, 12748, 0026F690:): Configuration Channel/CFP2-CFP: new setting for device WheelEX defined as Label=FB 420/10 CFP
+LOG(2015-08-23T14:27:39.769148, 12748, 0026F690:): Configuration Channel/CFP2-CFP: new setting for device Core defined as Shutter=ShutterFL
+LOG(2015-08-23T14:27:39.769148, 12748, 0026F690:): Configuration Channel/Blocked: new setting for device WheelEM defined as Label=Blocked
+LOG(2015-08-23T14:27:39.769148, 12748, 0026F690:): Configuration Channel/Blocked: new setting for device WheelEX defined as Label=D350/50x CFP
+LOG(2015-08-23T14:27:39.769148, 12748, 0026F690:): Configuration Channel/Blocked: new setting for device Core defined as Shutter=ShutterFL
+LOG(2015-08-23T14:27:39.769148, 12748, 0026F690:): Configuration Channel/Transmission: new setting for device WheelEM defined as Label=Open
+LOG(2015-08-23T14:27:39.769148, 12748, 0026F690:): Configuration Channel/Transmission: new setting for device WheelEX defined as Label=D350/50x CFP
+LOG(2015-08-23T14:27:39.769148, 12748, 0026F690:): Configuration Channel/Transmission: new setting for device Core defined as Shutter=ShutterTR
+LOG(2015-08-23T14:27:39.770148, 12748, 0026F690:): Configuration Channel/YFP-YFP: new setting for device WheelEM defined as Label=D540/20m YFP FRET
+LOG(2015-08-23T14:27:39.770148, 12748, 0026F690:): Configuration Channel/YFP-YFP: new setting for device WheelEX defined as Label=D510/20X
+LOG(2015-08-23T14:27:39.770148, 12748, 0026F690:): Configuration Channel/YFP-YFP: new setting for device Core defined as Shutter=ShutterFL
+LOG(2015-08-23T14:27:39.770148, 12748, 0026F690:): Configuration Channel/Uncaging: new setting for device WheelEM defined as Label=ET 470/24m CFP FRET
+LOG(2015-08-23T14:27:39.770148, 12748, 0026F690:): Configuration Channel/Uncaging: new setting for device WheelEX defined as Label=D350/50x CFP
+LOG(2015-08-23T14:27:39.770148, 12748, 0026F690:): Configuration Channel/Uncaging: new setting for device Core defined as Shutter=ShutterFL
+LOG(2015-08-23T14:27:39.770148, 12748, 0026F690:): Configuration Channel/CFP-YFP: new setting for device WheelEM defined as Label=D540/20m YFP FRET
+LOG(2015-08-23T14:27:39.770148, 12748, 0026F690:): Configuration Channel/CFP-YFP: new setting for device WheelEX defined as Label=ET 430/24x FRET
+LOG(2015-08-23T14:27:39.770148, 12748, 0026F690:): Configuration Channel/CFP-YFP: new setting for device Core defined as Shutter=ShutterFL
+LOG(2015-08-23T14:27:39.770148, 12748, 0026F690:): Configuration Channel/GFP: new setting for device WheelEM defined as Label=D535/40m GFP
+LOG(2015-08-23T14:27:39.770148, 12748, 0026F690:): Configuration Channel/GFP: new setting for device WheelEX defined as Label=HQ 480/40x GFP
+LOG(2015-08-23T14:27:39.770148, 12748, 0026F690:): Configuration Channel/GFP: new setting for device Core defined as Shutter=ShutterFL
+LOG(2015-08-23T14:27:39.770148, 12748, 0026F690:): Configuration Channel/TransWithOpenedFL: new setting for device WheelEM defined as Label=D535/40m GFP
+LOG(2015-08-23T14:27:39.770148, 12748, 0026F690:): Configuration Channel/TransWithOpenedFL: new setting for device WheelEX defined as Label=D350/50x CFP
+LOG(2015-08-23T14:27:39.770148, 12748, 0026F690:): Configuration Channel/TransWithOpenedFL: new setting for device Core defined as Shutter=ShutterTR
+LOG(2015-08-23T14:27:39.770148, 12748, 0026F690:): Configuration Channel/CFP-CFP: new setting for device WheelEM defined as Label=ET 470/24m CFP FRET
+LOG(2015-08-23T14:27:39.770148, 12748, 0026F690:): Configuration Channel/CFP-CFP: new setting for device WheelEX defined as Label=ET 430/24x FRET
+LOG(2015-08-23T14:27:39.770148, 12748, 0026F690:): Configuration Channel/CFP-CFP: new setting for device Core defined as Shutter=ShutterFL
+LOG(2015-08-23T14:27:39.770148, 12748, 0026F690:): Configuration Channel/CFP2-YFP: new setting for device WheelEM defined as Label=D540/20m YFP FRET
+LOG(2015-08-23T14:27:39.770148, 12748, 0026F690:): Configuration Channel/CFP2-YFP: new setting for device WheelEX defined as Label=FB 420/10 CFP
+LOG(2015-08-23T14:27:39.770148, 12748, 0026F690:): Configuration Channel/CFP2-YFP: new setting for device Core defined as Shutter=ShutterFL
+LOG(2015-08-23T14:27:39.771148, 12748, 0026F690:): Configuration Channel/RFP: new setting for device WheelEM defined as Label=HQ630/60 M new RFP
+LOG(2015-08-23T14:27:39.771148, 12748, 0026F690:): Configuration Channel/RFP: new setting for device WheelEX defined as Label=HQ 560/55x RFP
+LOG(2015-08-23T14:27:39.771148, 12748, 0026F690:): Configuration Channel/RFP: new setting for device Core defined as Shutter=ShutterFL
+LOG(2015-08-23T14:27:39.771148, 12748, 0026F690:): Configuration ShutterUV/Open: new setting for device ShutterUV defined as Command=Open
+LOG(2015-08-23T14:27:39.771148, 12748, 0026F690:): Configuration ShutterUV/Close: new setting for device ShutterUV defined as Command=Close
+LOG(2015-08-23T14:27:39.771148, 12748, 0026F690:): Configuration System/Shutdown: new setting for device WheelEM defined as Label=Open
+LOG(2015-08-23T14:27:39.771148, 12748, 0026F690:): Configuration System/Shutdown: new setting for device WheelEX defined as Label=D350/50x CFP
+LOG(2015-08-23T14:27:39.771148, 12748, 0026F690:): Configuration System/Shutdown: new setting for device Cascade defined as Gain=1
+LOG(2015-08-23T14:27:39.771148, 12748, 0026F690:): Configuration System/Shutdown: new setting for device Cascade defined as MultiplierGain=1
+LOG(2015-08-23T14:27:39.771148, 12748, 0026F690:): Configuration System/Shutdown: new setting for device ShutterFL defined as Command=Close
+LOG(2015-08-23T14:27:39.771148, 12748, 0026F690:): Configuration System/Shutdown: new setting for device ShutterTR defined as Command=Close
+LOG(2015-08-23T14:27:39.771148, 12748, 0026F690:): Configuration System/Shutdown: new setting for device Core defined as Shutter=ShutterTR
+LOG(2015-08-23T14:27:39.771148, 12748, 0026F690:): Configuration System/Shutdown: new setting for device Core defined as TimeoutMs=15000
+LOG(2015-08-23T14:27:39.771148, 12748, 0026F690:): Configuration System/Shutdown: new setting for device XYStage defined as FinishError-PCROS(nm)=22.0000
+LOG(2015-08-23T14:27:39.771148, 12748, 0026F690:): Configuration System/Startup: new setting for device Cascade defined as Gain=3
+LOG(2015-08-23T14:27:39.771148, 12748, 0026F690:): Configuration System/Startup: new setting for device Cascade defined as MultiplierGain=3072
+LOG(2015-08-23T14:27:39.771148, 12748, 0026F690:): Configuration System/Startup: new setting for device WheelEM defined as Label=Blocked
+LOG(2015-08-23T14:27:39.771148, 12748, 0026F690:): Configuration System/Startup: new setting for device WheelEX defined as Label=D350/50x CFP
+LOG(2015-08-23T14:27:39.771148, 12748, 0026F690:): Configuration System/Startup: new setting for device ShutterFL defined as Command=Close
+LOG(2015-08-23T14:27:39.772148, 12748, 0026F690:): Configuration System/Startup: new setting for device ShutterTR defined as Command=Close
+LOG(2015-08-23T14:27:39.772148, 12748, 0026F690:): Configuration System/Startup: new setting for device Core defined as Shutter=ShutterFL
+LOG(2015-08-23T14:27:39.772148, 12748, 0026F690:): Configuration System/Startup: new setting for device Core defined as TimeoutMs=60000
+LOG(2015-08-23T14:27:39.772148, 12748, 0026F690:): Configuration System/Startup: new setting for device XYStage defined as FinishError-PCROS(nm)=100.0000
+LOG(2015-08-23T14:27:39.772148, 12748, 0026F690:): Configuration WheelEX/FB 420-10 CFP: new setting for device WheelEX defined as Label=FB 420/10 CFP
+LOG(2015-08-23T14:27:39.772148, 12748, 0026F690:): Configuration WheelEX/Blocked: new setting for device WheelEX defined as Label=Blocked
+LOG(2015-08-23T14:27:39.772148, 12748, 0026F690:): Configuration WheelEX/HQ 560-55x RFP: new setting for device WheelEX defined as Label=HQ 560/55x RFP
+LOG(2015-08-23T14:27:39.772148, 12748, 0026F690:): Configuration WheelEX/ET 430-24x FRET: new setting for device WheelEX defined as Label=ET 430/24x FRET
+LOG(2015-08-23T14:27:39.772148, 12748, 0026F690:): Configuration WheelEX/Filter-9: new setting for device WheelEX defined as Label=Filter-9
+LOG(2015-08-23T14:27:39.772148, 12748, 0026F690:): Configuration WheelEX/Filter-10: new setting for device WheelEX defined as Label=Filter-10
+LOG(2015-08-23T14:27:39.772148, 12748, 0026F690:): Configuration WheelEX/D350-50x CFP: new setting for device WheelEX defined as Label=D350/50x CFP
+LOG(2015-08-23T14:27:39.772148, 12748, 0026F690:): Configuration WheelEX/Open: new setting for device WheelEX defined as Label=Open
+LOG(2015-08-23T14:27:39.772148, 12748, 0026F690:): Configuration WheelEX/D510-20X: new setting for device WheelEX defined as Label=D510/20X
+LOG(2015-08-23T14:27:39.772148, 12748, 0026F690:): Configuration WheelEX/HQ 480-40x GFP: new setting for device WheelEX defined as Label=HQ 480/40x GFP
+LOG(2015-08-23T14:27:39.772148, 12748, 0026F690:): Configuration TTL1/1: new setting for device TTL-1 defined as State=1
+LOG(2015-08-23T14:27:39.772148, 12748, 0026F690:): Configuration TTL1/0: new setting for device TTL-1 defined as State=0
+LOG(2015-08-23T14:27:39.772148, 12748, 0026F690:): Configuration Multiplier/NewPreset: new setting for device Cascade defined as MultiplierGain=1
+LOG(2015-08-23T14:27:39.772148, 12748, 0026F690:): Configuration ShutterTR/Open: new setting for device ShutterTR defined as Command=Open
+LOG(2015-08-23T14:27:39.773148, 12748, 0026F690:): Configuration ShutterTR/Close: new setting for device ShutterTR defined as Command=Close
+LOG(2015-08-23T14:27:39.773148, 12748, 0026F690:): Configuration ShutterFL/Open: new setting for device ShutterFL defined as Command=Open
+LOG(2015-08-23T14:27:39.773148, 12748, 0026F690:): Configuration ShutterFL/Close: new setting for device ShutterFL defined as Command=Close
+LOG(2015-08-23T14:27:39.773148, 12748, 0026F690:): Resolution ID Res20x: for device Objective defined as Label=Nikon 20X Plan Fluor ELWD
+LOG(2015-08-23T14:27:39.773148, 12748, 0026F690:): Pixel size 0.500000 um set for resolution ID: Res20x
+LOG(2015-08-23T14:27:39.773148, 12748, 0026F690:): Resolution ID Res40x: for device Objective defined as Label=Nikon 40X Plan Flueor ELWD
+LOG(2015-08-23T14:27:39.773148, 12748, 0026F690:): Pixel size 0.250000 um set for resolution ID: Res40x
+LOG(2015-08-23T14:27:39.773148, 12748, 0026F690:): Resolution ID Res10x: for device Objective defined as Label=Nikon 10X S Fluor
+LOG(2015-08-23T14:27:39.773148, 12748, 0026F690:): Pixel size 1.000000 um set for resolution ID: Res10x
+LOG(2015-08-23T14:27:40.053164, 12748, 0026F690:): Shutter device set to ShutterFL
+LOG(2015-08-23T14:27:40.053164, 12748, 0026F690:): > Notification for Device: Core Property: Shutter changed to value: ShutterFL
+LOG(2015-08-23T14:27:40.053164, 12748, 0026F690:): > Notification for Device: Core Property: TimeoutMs changed to value: 60000
+LOG(2015-08-23T14:27:40.405185, 12748, 0026F690:): System state cache updated.
+LOG(2015-08-23T14:27:40.466188, 12748, 0026F690:): Error occurred. Device GetPixelSizeUm. Objective
+Can't find the device with the specified label.
+
+LOG(2015-08-23T14:27:40.466188, 12748, 0026F690:): Error occurred. Device GetPixelSizeUm. Objective
+Can't find the device with the specified label.
+
+LOG(2015-08-23T14:27:40.466188, 12748, 0026F690:): Error occurred. Device GetPixelSizeUm. Objective
+Can't find the device with the specified label.
+
+LOG(2015-08-23T14:27:40.734203, 12748, 0026F690:): System state cache updated.
+LOG(2015-08-23T14:27:40.788206, 12748, 0026F690:): Error occurred. Device GetPixelSizeUm. Objective
+Can't find the device with the specified label.
+
+LOG(2015-08-23T14:27:40.788206, 12748, 0026F690:): Error occurred. Device GetPixelSizeUm. Objective
+Can't find the device with the specified label.
+
+LOG(2015-08-23T14:27:40.788206, 12748, 0026F690:): Error occurred. Device GetPixelSizeUm. Objective
+Can't find the device with the specified label.
+
+LOG(2015-08-23T14:27:40.791207, 12748, 0026F690:): > Startup script file (C:\Users\zoom\Documents\MATLAB/MMStartup.bsh) not present.
+LOG(2015-08-23T14:34:35.256913, 12748, 0C89A7F8:): Image acquisition synchronized with XYStage
+LOG(2015-08-23T14:34:35.256913, 12748, 0C89A7F8:): Image acquisition synchronized with ShutterFL
+LOG(2015-08-23T14:34:38.706110, 12748, 0C89A7F8:): > Notification for Device: Core Property: Shutter changed to value: ShutterFL
+LOG(2015-08-23T14:34:38.707110, 12748, 0C89A7F8:): Auto shutter OFF.
+LOG(2015-08-23T14:34:38.813116, 12748, 0C89A7F8:): Error occurred. Device GetPixelSizeUm. Objective
+Can't find the device with the specified label.
+
+LOG(2015-08-23T14:34:38.813116, 12748, 0C89A7F8:): Error occurred. Device GetPixelSizeUm. Objective
+Can't find the device with the specified label.
+
+LOG(2015-08-23T14:34:38.813116, 12748, 0C89A7F8:): Error occurred. Device GetPixelSizeUm. Objective
+Can't find the device with the specified label.
+
+LOG(2015-08-23T14:34:38.914122, 12748, 0C89A618:): Error occurred. Device GetPixelSizeUm. Objective
+Can't find the device with the specified label.
+
+LOG(2015-08-23T14:34:38.914122, 12748, 0C89A618:): Error occurred. Device GetPixelSizeUm. Objective
+Can't find the device with the specified label.
+
+LOG(2015-08-23T14:34:38.914122, 12748, 0C89A618:): Error occurred. Device GetPixelSizeUm. Objective
+Can't find the device with the specified label.
+
+LOG(2015-08-23T14:34:38.951124, 12748, 0C89A618:): Auto shutter OFF.
+LOG(2015-08-23T14:34:39.018128, 12748, 0C89A618:): Device Cascade message: Started sequence on Cascade, at 493655679 18128, with 20 and 0 ms
+
+LOG(2015-08-23T14:34:40.210196, 12748, 0C89B1D0:): Device Cascade message: Sequence thread exiting
+LOG(2015-08-23T14:34:40.673223, 12748, 0C89A618:): Auto shutter OFF.
+LOG(2015-08-23T14:34:40.792229, 12748, 0C89A7F8:): Auto shutter ON.
+LOG(2015-08-23T14:34:41.043244, 12748, 0C89CAF8:): > 20 images saved in 2183 ms.
+LOG(2015-08-23T14:56:04.383647, 12748, 0026F690:): Shutter device set to ShutterTR
+LOG(2015-08-23T14:56:04.383647, 12748, 0026F690:): > Notification for Device: Core Property: Shutter changed to value: ShutterTR
+LOG(2015-08-23T14:56:04.383647, 12748, 0026F690:): > Notification for Device: Core Property: TimeoutMs changed to value: 15000

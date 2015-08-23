@@ -1,0 +1,50 @@
+2014-03-23 00:10:49   Update variable varsFileName from varScalars.
+2014-03-23 00:10:49   Update variable varVectorsFileName from varScalars.
+2014-03-23 00:10:49   Update variable configGroup from varScalars.
+2014-03-23 00:10:49   Update variable configUncage from varScalars.
+2014-03-23 00:10:49   Update variable shutterUncage from varScalars.
+2014-03-23 00:10:49   Update variable uncageType from varScalars.
+2014-03-23 00:10:49   Update variable isAcqRunning from varScalars.
+2014-03-23 00:10:49   Update variable stagePosArray from varScalars.
+2014-03-23 00:10:49   Update variable uncagingPos from varScalars.
+2014-03-23 00:10:49   Update variable maxPixelValue from varScalars.
+2014-03-23 00:10:49   Update variable iAcqProfile from varScalars.
+2014-03-23 00:10:49   Update variable injectUnitTime from varScalars.
+2014-03-23 00:10:49   Update variable iPos from varScalars.
+2014-03-23 00:10:49   Update variable configGroup from varScalars.
+2014-03-23 00:10:49   Update variable error from varScalars.
+2014-03-23 00:10:49   Update variable iBatch from varScalars.
+2014-03-23 00:10:49   Update variable iConfigToDisplay from varScalars.
+2014-03-23 00:10:49   Update variable isConnectedMM from varScalars.
+2014-03-23 00:10:50   Update variable savedVars from varVectors.
+2014-03-23 00:10:50   Update variable guiName from varVectors.
+2014-03-23 00:10:50   Update variable guiType from varVectors.
+2014-03-23 00:10:50   Update variable trackHeader from varVectors.
+2014-03-23 00:10:50   Update variable acqProfiles from varVectors.
+2014-03-23 00:10:50   Update variable acqProfileConfigs from varVectors.
+2014-03-23 00:10:50   Update variable filedir from guiVars.
+2014-03-23 00:10:50   Update variable numImages from guiVars.
+2014-03-23 00:10:50   Update variable interval from guiVars.
+2014-03-23 00:10:50   Update variable pix2um from guiVars.
+2014-03-23 00:10:50   Update variable exposure from guiVars.
+2014-03-23 00:10:50   Update variable isTrackCell from guiVars.
+2014-03-23 00:10:50   Update variable isAutoContrast from guiVars.
+2014-03-23 00:10:50   Update variable isLog from guiVars.
+2014-03-23 00:10:50   Update variable isAutoUncage from guiVars.
+2014-03-23 00:10:50   Update variable isPinUncage from guiVars.
+2014-03-23 00:10:50   Update variable isUpdateImages from guiVars.
+2014-03-23 00:10:50   Update variable isPinCell from guiVars.
+2014-03-23 00:10:50   Update variable iAcqProfile from guiVars.
+2014-03-23 00:10:50   Update variable uncagingPos from guiVars.
+2014-03-23 00:10:50   Update variable configGroup from guiVars.
+2014-03-23 00:10:50   Update variable pinUncagePos from guiVars.
+2014-03-23 00:10:50   Update variable prefix from guiVars.
+2014-03-23 00:10:50   Update variable isAutoSaveTrack from guiVars.
+2014-03-23 00:10:50   Update variable isAutoShutter from guiVars.
+2014-03-23 00:10:50   Update variable isExposeCam from guiVars.
+2014-03-23 00:10:50   Update variable isLaserUncage from guiVars.
+2014-03-23 00:10:50   Welcome!
+2014-03-23 00:10:51   GFP is not a valid config.
+2014-03-23 00:11:13   No image has been loaded to the left axes.
+2014-03-23 00:11:34   Goodbye!
+2014-03-23 00:11:34   Directory does not exist. Log is saved to the program directory.
