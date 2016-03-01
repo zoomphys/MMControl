@@ -1,5 +1,5 @@
-% dev version 2.1
-% date: Feb 18, 2014
+% dev version 2.1.1
+% date: Dec 11, 2015
 
 function varargout = MMControl(varargin)
 % MMCONTROL MATLAB code for MMControl.fig
@@ -25,7 +25,7 @@ function varargout = MMControl(varargin)
 
 % Edit the above text to modify the response to help MMControl
 
-% Last Modified by GUIDE v2.5 15-Apr-2015 15:40:17
+% Last Modified by GUIDE v2.5 11-Dec-2015 09:56:04
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -138,6 +138,7 @@ function exit_pushbutton_Callback(hObject, eventdata, handles)
 % hObject    handle to exit_pushbutton (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+% delete(handles.main_figure);
 main_figure_CloseRequestFcn(handles.main_figure, eventdata, handles);
 
 
@@ -569,7 +570,7 @@ for iStage=1:acq.numStagePos
             posCurrent = acq.stagePosArray(iStage,:);
             moveStage(handles,posCurrent(1:2));
             if iStage==1
-                pause(2.5);
+                pause(5);
             else
                 pause(0.5);
             end
@@ -1090,7 +1091,8 @@ function moveStageRelative(handles,dx,dy)
 % dx and dy are displacements in x and y in units of um
 
 % x-axis is flipped in controller
-handles.mmc.setRelativeXYPosition(handles.stage,dx,dy);
+% handles.mmc.setRelativeXYPosition(handles.stage,dx,dy);
+handles.mmc.setRelativeXYPosition(handles.stage,-dx,dy);
 % handles.mmc.waitForDevice(handles.stage);
 
 
@@ -1177,7 +1179,7 @@ moveStage(handles,posInject(1:2));
 if isSaveFiles
     frameInterval = 0.2; % (s)
     numFrames = ceil(handles.uncageDuration/frameInterval);
-    numFrames = min(numFrames,10)+15;
+    numFrames = min(numFrames,25)+10;
     
 %     handles.mmc.setConfig('Channel','Transmission');
 %     handles.mmc.waitForConfig('Channel','Transmission');
@@ -2293,3 +2295,47 @@ function markBottomRight_pushbutton_Callback(hObject, eventdata, handles)
 [x,y] = getStagePos(handles);
 handles.stagePosBottomRight = [x,y];
 guidata(hObject, handles);
+
+
+% --- Executes on button press in laserCut_pushbutton.
+function laserCut_pushbutton_Callback(hObject, eventdata, handles)
+% hObject    handle to laserCut_pushbutton (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+% Expose sample to UV laser while moving the sample through positions
+% specified by stagePosArray. The transit time between positions is
+% specified by uncageDuration
+if ~isfield(handles,'uncagingPos')
+    updatestatus(handles.main_figure,'Uncaging position has not been marked.');
+    return;
+end
+disp(handles.stagePosArray)
+disp(length(handles.stagePosArray))
+
+posInit = handles.stagePosArray(1,:);
+dx = (posInit(3) - handles.uncagingPos(3))*handles.pix2um;
+dy = (posInit(4) - handles.uncagingPos(4))*handles.pix2um;
+moveStageRelative(handles,dx,dy);
+pause(0.5)
+
+handles.mmc.setConfig(handles.configGroup,'Blocked');
+handles.mmc.waitForConfig(handles.configGroup,'Blocked');
+handles.mmc.setConfig(handles.shutterUncage,'Open');
+
+% stagePosArray has empty row as the last item
+for iPos=1:length(handles.stagePosArray)-2
+    pos1 = handles.stagePosArray(iPos,:);
+    pos2 = handles.stagePosArray(iPos+1,:);
+    dx = (pos2(3) - pos1(3))*handles.pix2um;
+    dy = (pos2(4) - pos1(4))*handles.pix2um;
+    moveStageRelative(handles,dx,dy);
+
+    hold(handles.left_axes,'on');
+    plot(handles.left_axes,[pos1(3),pos2(3)],[pos1(4),pos2(4)],'r');
+    hold(handles.left_axes,'off');
+    pause(1)
+end
+handles.mmc.setConfig(handles.shutterUncage,'Close');
+moveStage(handles,posInit(1:2));
+
+updatestatus(handles.main_figure,'Laser cutting is finished.');
