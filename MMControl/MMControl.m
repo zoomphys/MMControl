@@ -25,7 +25,7 @@ function varargout = MMControl(varargin)
 
 % Edit the above text to modify the response to help MMControl
 
-% Last Modified by GUIDE v2.5 11-Dec-2015 09:56:04
+% Last Modified by GUIDE v2.5 01-Mar-2016 18:27:59
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -704,13 +704,22 @@ end
 % change the start frame whenever new period is specified
 % find out which position needs stimulus released
 uncageOrderArray = acq.iImage-acq.refFramesUncage;
-acq.isUncageThisFrame = figHandles.isAutoUncage & (uncageOrderArray >= 0) & (mod(uncageOrderArray,figHandles.uncagePeriod)<1);
-acq.isUncageNextFrame = figHandles.isAutoUncage & (uncageOrderArray+1 >= 0) & (mod(uncageOrderArray+1,figHandles.uncagePeriod)<1);
+maxFrameUncage = 6000;
+acq.isUncageThisFrame = figHandles.isAutoUncage & (acq.iImage < maxFrameUncage) & (uncageOrderArray >= 0) & (mod(uncageOrderArray,figHandles.uncagePeriod)<1);
+acq.isUncageNextFrame = figHandles.isAutoUncage & (acq.iImage < maxFrameUncage) & (uncageOrderArray+1 >= 0) & (mod(uncageOrderArray+1,figHandles.uncagePeriod)<1);
+% acq.isUncageThisFrame = figHandles.isAutoUncage & (uncageOrderArray >= 0) & (mod(uncageOrderArray,figHandles.uncagePeriod)<1);
+% acq.isUncageNextFrame = figHandles.isAutoUncage & (uncageOrderArray+1 >= 0) & (mod(uncageOrderArray+1,figHandles.uncagePeriod)<1);
+% updatestatus(figHandles.main_figure,['Test: showing maxFrameUncage =' num2str(maxFrameUncage)]);
+
+uncageOrderArrayMod = mod(uncageOrderArray,figHandles.uncagePeriod);
+extraStimuliMod = mod(uncageOrderArrayMod,figHandles.periodExtraStimuli);
+extraStimuliIndex = floor(uncageOrderArrayMod/figHandles.periodExtraStimuli);
+acq.isUncageThisFrameExtra = figHandles.isAutoUncage & (uncageOrderArray >= 0) & (extraStimuliMod==0) & (extraStimuliIndex>0) & (extraStimuliIndex<=figHandles.numExtraStimuli);
 
 % prepare stage to uncaging position if the next frame is is the uncaging
 % frame range
-acq.isUncageFrameRange_NextFrame = figHandles.isAutoUncage & (uncageOrderArray+1 >= 0) & (mod(uncageOrderArray+1,figHandles.uncagePeriod)<figHandles.numFramesUncage);
 acq.isUncageFrameRange_ThisFrame = figHandles.isAutoUncage & (uncageOrderArray >= 0) & (mod(uncageOrderArray,figHandles.uncagePeriod)<figHandles.numFramesUncage);
+acq.isUncageFrameRange_NextFrame = figHandles.isAutoUncage & (uncageOrderArray+1 >= 0) & (mod(uncageOrderArray+1,figHandles.uncagePeriod)<figHandles.numFramesUncage);
 
 if figHandles.isPreRelease && acq.isUncageNextFrame(1)
     updatestatus(figHandles.main_figure,['Pre-release at uncaging position: [' num2str(figHandles.uncagingPos(1:2)) '].']);
@@ -720,17 +729,23 @@ end
 
 for iStage=1:acq.numStagePos
 %     if acq.isUncageThisFrame(iStage) && (iStage==1)
-    if acq.isUncageThisFrame(iStage) && ((iStage==1)||(iStage==acq.numStagePos))
-        posInject = acq.stagePosArray(iStage,:);
-        numTrains = floor(figHandles.uncageDuration/figHandles.injectUnitTime);
-%         if figHandles.isPinUncage
-%             % outside minus sign is due to peculiarities in the stage
-%             % coordinates compared to those of the image
-%             posInject(1:2) = posInject(1:2) - (figHandles.pinUncagePos(3:4) - figHandles.pinPos(3:4)) * figHandles.pix2um;
-%         end
-        updatestatus(figHandles.main_figure,['Uncage at position #' num2str(iStage) ': [' num2str(posInject) '].']);
-        uncage_injector(figHandles,posInject,numTrains,figHandles.isMonitorUncage,[]);
-        acq.imgUncage = snapSingleImage(figHandles);
+    if ((iStage==1)||(iStage==acq.numStagePos))
+        if acq.isUncageThisFrame(iStage) || (acq.isUncageThisFrameExtra(iStage))
+            posInject = acq.stagePosArray(iStage,:);
+            if acq.isUncageThisFrame(iStage)
+                numTrains = floor(figHandles.uncageDuration/figHandles.injectUnitTime);
+            else
+                numTrains = floor(figHandles.durationExtraStimuli/figHandles.injectUnitTime);
+            end            
+    %         if figHandles.isPinUncage
+    %             % outside minus sign is due to peculiarities in the stage
+    %             % coordinates compared to those of the image
+    %             posInject(1:2) = posInject(1:2) - (figHandles.pinUncagePos(3:4) - figHandles.pinPos(3:4)) * figHandles.pix2um;
+    %         end
+            updatestatus(figHandles.main_figure,['Uncage at position #' num2str(iStage) ': [' num2str(posInject) '].']);
+            uncage_injector(figHandles,posInject,numTrains,figHandles.isMonitorUncage,[]);
+            acq.imgUncage = snapSingleImage(figHandles);
+        end
     end
 end
     
@@ -977,9 +992,7 @@ function numImages_edit_Callback(hObject, eventdata, handles)
 
 % Hints: get(hObject,'String') returns contents of numImages_edit as text
 %        str2double(get(hObject,'String')) returns contents of numImages_edit as a double
-num = round(str2double(get(hObject,'String')));
-handles.numImages = num;
-guidata(hObject, handles);
+edit_number(hObject, handles, 'numImages','int')
 
 
 % --- Executes during object creation, after setting all properties.
@@ -1002,9 +1015,7 @@ function interval_edit_Callback(hObject, eventdata, handles)
 
 % Hints: get(hObject,'String') returns contents of interval_edit as text
 %        str2double(get(hObject,'String')) returns contents of interval_edit as a double
-num = str2double(get(hObject,'String'));
-handles.interval = num;
-guidata(hObject, handles);
+edit_number(hObject, handles, 'interval','double')
 
 
 % --- Executes during object creation, after setting all properties.
@@ -1103,9 +1114,8 @@ function pix2um_edit_Callback(hObject, eventdata, handles)
 
 % Hints: get(hObject,'String') returns contents of pix2um_edit as text
 %        str2double(get(hObject,'String')) returns contents of pix2um_edit as a double
-handles.pix2um = str2double(get(hObject,'String'));
+edit_number(hObject, handles, 'pix2um','double')
 updatestatus(handles.main_figure,['Calibration is set to: 1 pixel = ' num2str(handles.pix2um) 'um']);
-guidata(hObject, handles);
 
 
 % --- Executes during object creation, after setting all properties.
@@ -1273,8 +1283,7 @@ function exposure_edit_Callback(hObject, eventdata, handles)
 
 % Hints: get(hObject,'String') returns contents of exposure_edit as text
 %        str2double(get(hObject,'String')) returns contents of exposure_edit as a double
-handles.exposure = str2double(get(hObject,'String'));
-guidata(hObject, handles);
+edit_number(hObject, handles, 'exposure','double')
 
 
 % --- Executes during object creation, after setting all properties.
@@ -2041,13 +2050,14 @@ x1 = handles.stagePosTopLeft(1);
 y1 = handles.stagePosTopLeft(2);
 x2 = handles.stagePosBottomRight(1);
 y2 = handles.stagePosBottomRight(2);
-dx = (2*(x2>=x1)-1)*handles.imWidth*handles.pix2um;
-dy = (2*(y2>=y1)-1)*handles.imHeight*handles.pix2um;
+dx = handles.imWidth*handles.pix2um;
+dy = handles.imHeight*handles.pix2um;
 defaultPos = [256,256];
 
-numGridX = floor((x2-x1)/dx)+2;
-numGridY = floor((y2-y1)/dy)+1;
+numGridX = ceil((x2-x1)/dx)+1;
+numGridY = ceil((y2-y1)/dy)+1;
 
+% create array of positions and save to handles
 contents = cellstr(get(handles.stagePos_popupmenu,'String'));
 contents = contents(1);
 
@@ -2285,6 +2295,7 @@ function markTopLeft_pushbutton_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 [x,y] = getStagePos(handles);
 handles.stagePosTopLeft = [x,y];
+updatestatus(handles.main_figure,[num2str(x) ' ' num2str(y)]);
 guidata(hObject, handles);
 
 % --- Executes on button press in markBottomRight_pushbutton.
@@ -2294,6 +2305,7 @@ function markBottomRight_pushbutton_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 [x,y] = getStagePos(handles);
 handles.stagePosBottomRight = [x,y];
+updatestatus(handles.main_figure,[num2str(x) ' ' num2str(y)]);
 guidata(hObject, handles);
 
 
@@ -2339,3 +2351,73 @@ handles.mmc.setConfig(handles.shutterUncage,'Close');
 moveStage(handles,posInit(1:2));
 
 updatestatus(handles.main_figure,'Laser cutting is finished.');
+
+
+function periodExtraStimuli_edit_Callback(hObject, eventdata, handles)
+% hObject    handle to periodExtraStimuli_edit (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of periodExtraStimuli_edit as text
+%        str2double(get(hObject,'String')) returns contents of periodExtraStimuli_edit as a double
+edit_number(hObject, handles, 'periodExtraStimuli','double')
+
+
+% --- Executes during object creation, after setting all properties.
+function periodExtraStimuli_edit_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to periodExtraStimuli_edit (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+function numExtraStimuli_edit_Callback(hObject, eventdata, handles)
+% hObject    handle to numExtraStimuli_edit (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of numExtraStimuli_edit as text
+%        str2double(get(hObject,'String')) returns contents of numExtraStimuli_edit as a double
+edit_number(hObject, handles, 'numExtraStimuli','int')
+
+
+% --- Executes during object creation, after setting all properties.
+function numExtraStimuli_edit_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to numExtraStimuli_edit (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function durationExtraStimuli_edit_Callback(hObject, eventdata, handles)
+% hObject    handle to durationExtraStimuli_edit (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of durationExtraStimuli_edit as text
+%        str2double(get(hObject,'String')) returns contents of durationExtraStimuli_edit as a double
+edit_number(hObject, handles, 'durationExtraStimuli','double')
+
+
+% --- Executes during object creation, after setting all properties.
+function durationExtraStimuli_edit_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to durationExtraStimuli_edit (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
